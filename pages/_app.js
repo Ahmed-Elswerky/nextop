@@ -7,7 +7,7 @@ import firebase, { SignInScreen } from '../lib/config.js';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 // import ToggleCompo from './darkTogg';
-const Tog = dynamic(() => import('../lib/darkTogg.js'));
+const Tog = dynamic(() => import('../lib/darktogg.js'));
 function MyApp({ Component, pageProps }) {
 	return (
 		<>
