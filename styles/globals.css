@@ -1,26 +1,41 @@
-html{
-    width: 100%;
-    height: 100%;
-    filter:invert(1) ;
+html {
+	width: 100%;
+	height: 100%;
+	/* filter: invert(1); */
 }
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background: white;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+		Helvetica Neue, sans-serif;
+	background: white;
+	height: 100%;
 }
-img{
-    filter: invert(1);
+img {
+	/* filter: invert(1); */
 }
 
 a {
-  color: blue;
-  filter: hue-rotate(180deg);
-  text-decoration: none;
+	color: blue;
+	filter: hue-rotate(180deg);
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
+}
+#__next {
+	height: 100%;
+}
+Link:hover,
+a:hover {
+	cursor: pointer;
+}
+
+.invert {
+	filter: invert(1) hue-rotate(180deg);
+}
+.invert img {
+	filter: invert(1) hue-rotate(180deg);
 }

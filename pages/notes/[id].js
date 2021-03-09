@@ -1,35 +1,31 @@
-import { useRouter } from 'next/router';
 import Head from 'next/head';
-import Link from 'next/link';
 import firebase from '../../lib/config.js';
-import React, { useState } from 'react';
 import { getAllpostsids, getPostData } from '../../lib/posts';
 
-export default function note(props) {
-	const [post, setpost] = useState('');
-	var router = useRouter();
-	var { id } = router.query;
-	let data = '';
+import { GeistProvider, CssBaseline, Card, Grid } from '@geist-ui/react';
 
+export default function note(props) {
 	return (
 		<>
 			<Head>
 				<title>{props.id}</title>
 			</Head>
-			<div>
-				<Link href="/">home</Link>
-				<h1>post</h1>
-				<br />
-				{props.post}
-				<div id="info"></div>
-			</div>
+			<Grid.Container style={{ height: '80%' }} justify="center" alignItems="center">
+				<Grid xs={12}>
+					<Card shadow>
+						<h1>post</h1>
+						<br />
+						{props.post}
+						<div id="info"></div>
+					</Card>
+				</Grid>
+			</Grid.Container>
 		</>
 	);
 }
 
 export async function getServerSideProps(context) {
-    const data = await getPostData(context.query.id)
-    console.log(data,'--------------------------------')
+	const data = await getPostData(context.query.id);
 
 	if (!data) {
 		return {
@@ -38,7 +34,7 @@ export async function getServerSideProps(context) {
 	}
 
 	return {
-		props: {...data}, // will be passed to the page component as props
+		props: { ...data }, // will be passed to the page component as props
 	};
 }
 
