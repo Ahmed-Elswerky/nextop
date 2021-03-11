@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import { Breadcrumbs, Row, Col } from '@geist-ui/react';
 import { Home } from '@geist-ui/react-icons';
+import Head from 'next/head';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import firebase, { SignInScreen } from '../lib/config.js';
@@ -11,6 +12,15 @@ const Tog = dynamic(() => import('../lib/darktogg.js'));
 function MyApp({ Component, pageProps }) {
 	return (
 		<>
+			<Head>
+				<title>Nextpo - the posting site</title>
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta
+					name="description"
+					content="This is a demo site, made while learning next.js, and it basically saves your posts no matter who you are, signed or not"
+				/>
+				<meta name="robots" content="index, follow" />
+			</Head>
 			<Row style={{ padding: '4rem 0 0 7rem', textAlign: 'center' }}>
 				<Breadcrumbs size="large">
 					<Breadcrumbs.Item key="b1">
