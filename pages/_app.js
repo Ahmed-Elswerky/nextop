@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }) {
 					content="This is a demo site, made while learning next.js, and it basically saves your posts no matter who you are, signed or not"
 				/>
 				<meta name="robots" content="index, follow" />
+                <meta name="google-site-verification" content="FF9jOpPtfEehqUzBdcRYuIV-XmNBfWHQoWcp96xKRD0" />
 			</Head>
 			<Row style={{ padding: '4rem 0 0 7rem', textAlign: 'center' }}>
 				<Breadcrumbs size="large">
