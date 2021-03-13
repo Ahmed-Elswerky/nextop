@@ -3,6 +3,7 @@ import firebase from '../../lib/config.js';
 import { getAllpostsids, getPostData } from '../../lib/posts';
 import { GeistProvider, CssBaseline, Card, Grid } from '@geist-ui/react';
 import { graphql, buildSchema } from 'graphql';
+import { useState } from 'react';
 
 export default function note(props) {
 	var schema = buildSchema(`
@@ -10,11 +11,13 @@ export default function note(props) {
             hello: String
         }
     `);
+	const [res, setRes] = useState('');
 
 	var root = { hello: () => 'Hello world!' };
 
 	graphql(schema, '{ hello }', root).then((response) => {
 		console.log(response);
+		setRes(response);
 	});
 	return (
 		<>
@@ -26,8 +29,8 @@ export default function note(props) {
 					<Card shadow style={{ wordBreak: 'break-word' }}>
 						<h1>post</h1>
 						<br />
-						{props.post}
-						<div id="info"></div>
+						<div id="info">{props.post}</div>
+						{'aaaa ' + { res }}
 					</Card>
 				</Grid>
 			</Grid.Container>
