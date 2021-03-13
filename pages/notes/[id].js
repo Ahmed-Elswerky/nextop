@@ -6,10 +6,10 @@ import { graphql, buildSchema } from 'graphql';
 
 export default function note(props) {
 	var schema = buildSchema(`
-  type Query {
-    hello: String
-  }
-`);
+        type Query {
+            hello: String
+        }
+    `);
 
 	var root = { hello: () => 'Hello world!' };
 
