@@ -5,20 +5,21 @@ import { GeistProvider, CssBaseline, Card, Grid } from '@geist-ui/react';
 import { graphql, buildSchema } from 'graphql';
 import { useState } from 'react';
 
-export default function note(props) {
-	var schema = buildSchema(`
+var schema = buildSchema(`
         type Query {
             hello: String
         }
     `);
-	const [res, setRes] = useState('');
 
-	var root = { hello: () => 'Hello world!' };
+var root = { hello: () => 'Hello world!' },
+	ress;
+graphql(schema, '{ hello }', root).then((response) => {
+	console.log(response);
+	ress = response;
+});
+export default function note(props) {
+	const [res, setRes] = useState(ress);
 
-	graphql(schema, '{ hello }', root).then((response) => {
-		console.log(response);
-		setRes(response);
-	});
 	return (
 		<>
 			<Head>
@@ -30,7 +31,7 @@ export default function note(props) {
 						<h1>post</h1>
 						<br />
 						<div id="info">{props.post}</div>
-						{'aaaa ' + { res }}
+						{'aaaa ' + res.data.hello}
 					</Card>
 				</Grid>
 			</Grid.Container>
