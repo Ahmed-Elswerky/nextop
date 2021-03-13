@@ -9,7 +9,7 @@ body {
 		Helvetica Neue, sans-serif;
 	background: white;
 	width: 100%;
-	min-height: 100%;
+	min-height: 100vh;
 	height: auto;
 }
 
@@ -35,4 +35,8 @@ a:hover {
 }
 .invert img {
 	filter: invert(1) hue-rotate(180deg);
+}
+.item {
+	align-items: center;
+	text-align: center;
 }

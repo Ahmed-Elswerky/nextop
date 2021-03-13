@@ -12,7 +12,7 @@ export default function note(props) {
 			</Head>
 			<Grid.Container style={{ height: '80%' }} justify="center" alignItems="center">
 				<Grid xs={12}>
-					<Card shadow>
+					<Card shadow style={{ wordBreak: 'break-word' }}>
 						<h1>post</h1>
 						<br />
 						{props.post}

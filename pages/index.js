@@ -39,7 +39,9 @@ export default class Home extends React.Component {
 				<br />
 				<Link href="/add_post">add post</Link>
 				<Card shadow style={{ width: 'auto' }}>
-					<div id="hell">{this.state.posts}</div>
+					<div id="hell" style={{ wordBreak: 'break-word' }}>
+						{this.state.posts}
+					</div>
 				</Card>
 			</div>
 		);
